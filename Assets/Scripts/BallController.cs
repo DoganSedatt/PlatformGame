@@ -7,8 +7,10 @@ public class BallController : MonoBehaviour
     Rigidbody rb;
     float pushForce = 200f;
     public float horizontalMoveSpeed;
+    Vector3 startPos;
     void Start()
     {
+        startPos = this.transform.position;
         rb = GetComponent<Rigidbody>();
     }
 
@@ -22,5 +24,14 @@ public class BallController : MonoBehaviour
         rb.velocity = new Vector3(horizontalMove*horizontalMoveSpeed, rb.velocity.y,rb.velocity.z);//Saða sola hareket
         //rb.AddTorque(0, 0, -(horizontalMove * horizontalMoveSpeed));
         //rb.AddTorque(1, 0, 0, ForceMode.Impulse);//Rotasyonuna güç uygular
+    }
+    private void OnCollisionEnter(Collision collision)
+    {
+        //Bariyere çarpýnca karakter baþa dönsün.StartPos
+        if (collision.collider.CompareTag("barier"))
+        {
+            this.transform.position = startPos;
+        }
+        
     }
 }

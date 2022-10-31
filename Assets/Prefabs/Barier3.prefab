@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2591395398353091577}
   m_Layer: 0
   m_Name: Cube
-  m_TagString: Untagged
+  m_TagString: barier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 3155786408135117837}
   m_Layer: 0
   m_Name: Barier3
-  m_TagString: Untagged
+  m_TagString: barier
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
