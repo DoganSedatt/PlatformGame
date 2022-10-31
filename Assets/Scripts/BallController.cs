@@ -7,11 +7,13 @@ public class BallController : MonoBehaviour
     Rigidbody rb;
     float pushForce = 200f;
     public float horizontalMoveSpeed;
-    Vector3 startPos;
+    public Vector3 startPos;
+    private GameManager gameManager;//GameManager scriptine eriþmek için deðiþken
     void Start()
     {
         startPos = this.transform.position;
         rb = GetComponent<Rigidbody>();
+        gameManager = FindObjectOfType<GameManager>();//GameManager objesini bul ve deðiþkene at
     }
 
     // Update is called once per frame
@@ -30,7 +32,8 @@ public class BallController : MonoBehaviour
         //Bariyere çarpýnca karakter baþa dönsün.StartPos
         if (collision.collider.CompareTag("barier"))
         {
-            this.transform.position = startPos;
+            gameManager.RespwanPlayer();//Bariyere çarpýnca gameManagerin respawnPlayer metodunu çaðýr.
+            //O metod içinde de 2 saniye gecikmeli start pozisyonunda tekrar doðuþ gerçekleþiyor
         }
         
     }
