@@ -40,7 +40,7 @@ public class BallController : MonoBehaviour
     }
     private void FallDecector() {
         //Platformdan düþme metodu
-        if (this.transform.position.y <= -1.55f)
+        if (this.transform.position.y <= -2f)
         {
             gameManager.RespwanPlayer();
         }
