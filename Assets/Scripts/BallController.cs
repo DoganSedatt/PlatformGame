@@ -26,6 +26,7 @@ public class BallController : MonoBehaviour
         rb.velocity = new Vector3(horizontalMove*horizontalMoveSpeed, rb.velocity.y,rb.velocity.z);//Saða sola hareket
         //rb.AddTorque(0, 0, -(horizontalMove * horizontalMoveSpeed));
         //rb.AddTorque(1, 0, 0, ForceMode.Impulse);//Rotasyonuna güç uygular
+        FallDecector();
     }
     private void OnCollisionEnter(Collision collision)
     {
@@ -36,5 +37,12 @@ public class BallController : MonoBehaviour
             //O metod içinde de 2 saniye gecikmeli start pozisyonunda tekrar doðuþ gerçekleþiyor
         }
         
+    }
+    private void FallDecector() {
+        //Platformdan düþme metodu
+        if (this.transform.position.y <= -1.55f)
+        {
+            gameManager.RespwanPlayer();
+        }
     }
 }
