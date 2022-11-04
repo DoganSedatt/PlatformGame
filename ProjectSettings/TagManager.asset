@@ -8,6 +8,7 @@ TagManager:
   - Ball
   - barier
   - coin
+  - scoreText
   layers:
   - Default
   - TransparentFX
