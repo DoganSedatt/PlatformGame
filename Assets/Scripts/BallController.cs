@@ -43,6 +43,7 @@ public class BallController : MonoBehaviour
         if (this.transform.position.y <= -2f)
         {
             gameManager.RespwanPlayer();
+           
         }
     }
 }
