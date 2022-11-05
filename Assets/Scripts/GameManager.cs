@@ -12,6 +12,8 @@ public class GameManager : MonoBehaviour
     private BallController ballController;//BallController scriptine eriþmek için deðiþken 
     int currentScore;
     public TextMeshProUGUI scoreText;
+    public GameObject levelAnimPanel;
+    public Animator levelAnim;
     void Start()        
     {
         ballController = FindObjectOfType<BallController>();
@@ -35,5 +37,9 @@ public class GameManager : MonoBehaviour
         currentScore += scoreValue;
         scoreText.text = currentScore.ToString();
     }
-    
+    public void LevelAnim() {
+        levelAnimPanel.SetActive(true);
+        levelAnim.Play("LevelAnim");
+    }
+
 }

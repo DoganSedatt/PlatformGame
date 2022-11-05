@@ -38,6 +38,13 @@ public class BallController : MonoBehaviour
         }
         
     }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Finish"))
+        {
+            gameManager.LevelAnim();
+        }
+    }
     private void FallDecector() {
         //Platformdan düþme metodu
         if (this.transform.position.y <= -2f)
