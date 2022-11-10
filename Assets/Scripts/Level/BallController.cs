@@ -9,6 +9,7 @@ public class BallController : MonoBehaviour
     public float horizontalMoveSpeed;
     public Vector3 startPos;
     private GameManager gameManager;//GameManager scriptine eriþmek için deðiþken
+    public AudioSource coindSound;
     void Start()
     {
         startPos = this.transform.position;
@@ -43,6 +44,10 @@ public class BallController : MonoBehaviour
         if (other.CompareTag("Finish"))
         {
             gameManager.LevelAnim();
+        }
+        if (other.CompareTag("coin"))
+        {
+            coindSound.Play();
         }
     }
     private void FallDecector() {

@@ -6,6 +6,7 @@ public class Coin : MonoBehaviour
 {
     private GameManager gameManager;
     public int coinScoreValue;//Mevcut coin objesinin score'a katacaðý deðer.
+    
     private void Awake()
     {
         gameManager = FindObjectOfType<GameManager>();
@@ -21,6 +22,7 @@ public class Coin : MonoBehaviour
         {
             Destroy(this.gameObject);
             gameManager.ScoreUp(coinScoreValue);
+            
         }
     }
 }
